@@ -1,0 +1,219 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+
+    <link rel="icon" href="assets/images/Logo.ico" />
+    <link rel="stylesheet" href="css/styles1.css" />
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    <title>Order Now</title>
+  </head>
+  <body>
+    <div class="bgpicture">
+      <form id="cstdetails" action="config.php" method="POST" onsubmit="return validation()">
+        <div class="order-info">
+          <div class="order-info-header">
+              <img onclick="home()" class="logo" src="assets/images/Logo.png" />
+            <div class="heading">
+              <span>Enter Required Details! </span>
+            </div>
+          </div>
+
+          <div class="content-table">
+            <div class="content-row">
+              <!--  Name -->
+              <div class="content-label">
+                <label>Full Name </label>
+                <label style="color: red">*</label>
+              </div>
+              <div class="content-input">
+                <input id="txtName"
+                  class="txtBox"
+                  name="txtName"
+                  type="text"
+                  required
+                  maxlength="20"
+                />
+              </div>
+            </div>
+            <div class="content-row">
+              <!--  Ph number -->
+
+              <div class="content-label">
+                <label>Phone Number </label>
+                <label style="color: red">*</label>
+              </div>
+              <div class="content-input">
+                <input id="txtPhoneNumber"
+                  class="txtBox"
+                  name="txtPhoneNumber"
+                  type="text"
+                  required
+                  maxlength="16"
+                />
+              </div>
+            </div>
+            <div class="content-row">
+              <!--  Email -->
+
+              <div class="content-label">
+                <label>Email ID </label>
+                <label style="color: red">*</label>
+              </div>
+              <div class="content-input">
+                <input id="txtEmailID"
+                  class="txtBox"
+                  name="txtEmailID"
+                  type="text"
+                  required
+                  maxlength="30"
+                />
+              </div>
+            </div>
+            <div class="content-row" style="border-bottom: 2px solid #b2bec3">
+              <!--  Address -->
+
+              <div class="content-label">
+                <label>Address </label>
+                <label style="color: red">*</label>
+              </div>
+              <div class="content-input">
+                <textarea id="txtAddress"
+                  required
+                  class="txtBox"
+                  style="height: 120px"
+                  name="txtAddress"
+                  type="text"
+                  maxlength="120"
+                ></textarea>
+              </div>
+            </div>
+            <div class="content-row">
+              <!--  Rice -->
+
+              <div class="content-label">
+                <label>Rice?</label>
+                <label style="color: red">*</label>
+              </div>
+              <div class="content-input">
+                <label class="radiotxt">White</label>
+                <input value="White"
+                  class="btnRiceType"
+                  name="txtRiceType"
+                  type="radio"
+                  required
+                />
+                <label class="radiotxt">Brown</label>
+                <input value="Brown"
+                  class="btnRiceType"
+                  name="txtRiceType"
+                  type="radio"
+                  required
+                />
+                <label class="radiotxt">Any</label>
+                <input value="Any"
+                  class="btnRiceType"
+                  name="txtRiceType"
+                  type="radio"
+                  required
+                />
+                <label class="radiotxt">None</label>
+                <input value="None"
+                  class="btnRiceType"
+                  name="txtRiceType"
+                  type="radio"
+                  required
+                />
+              </div>
+            </div>
+            <div class="content-row">
+              <!--  Roti -->
+
+              <div class="content-label">
+                <label>Roti?</label>
+                <label style="color: red">*</label>
+              </div>
+              <div class="content-input-radio">
+                <div class="yes">
+                  <label class="radiotxt">Yes</label>
+                  <input value="Yes"
+                    class="radiobtn"
+                    name="txtRoti"
+                    type="radio"
+                    required
+                  />
+                </div>
+                <p>&emsp;&ensp;</p>
+                <div class="no">
+                  <label class="radiotxt">No</label>
+                  <input value="No"
+                    class="radiobtn"
+                    name="txtRoti"
+                    type="radio"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="content-row">
+              <!--  Vegetarian -->
+
+              <div class="content-label">
+                <label>Vegetarian?</label>
+                <label style="color: red">*</label>
+              </div>
+              <div class="content-input-radio">
+                <div class="yes">
+                  <label class="radiotxt">Yes</label>
+                  <input value="Yes"
+                    class="radiobtn"
+                    name="txtVegetarian"
+                    type="radio"
+                    required
+                  />
+                </div>
+                <p>&emsp;&ensp;</p>
+                <div class="no">
+                  <label class="radiotxt">No</label>
+                  <input value="No"
+                    class="radiobtn"
+                    name="txtVegetarian"
+                    type="radio"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="content-row">
+              <!--  Additional Information -->
+
+              <div class="content-label">
+                <label>Additional Information </label>
+              </div>
+              <div class="content-input">
+                <textarea
+                  placeholder="Please mention if you have any allergies."
+                  class="txtBox"
+                  style="height: 120px"
+                  name="txtAdditionalInfo"
+                  type="text"
+                  maxlength="90"
+                ></textarea>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: center">
+              <button class="btnSubmit" type="submit" value="submit">
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
